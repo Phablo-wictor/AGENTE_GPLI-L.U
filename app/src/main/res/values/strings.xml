@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Agente_GLPI</string>
+
+    <string-array name="Menu_City">
+        <item>SL (São Luís)</item>
+        <item>IZ (Imperatriz)</item>
+        <item>PN (Pinheiro)</item>
+        <item>GJ (Grajaú)</item>
+        <item>CH (Chapadinha)</item>
+        <item>CD (Codó)</item>
+        <item>BC (Bacabal) </item>
+        <item>BS (Balsas)</item>
+        <item>SB (São Bernado)</item>
+    </string-array>
+
+    <string-array name="Menu_TipoEquipamento">
+        <item>Notebook</item>
+        <item>Desktop</item>
+    </string-array>
+</resources>
