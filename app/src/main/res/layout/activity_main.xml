@@ -11,7 +11,7 @@
         android:id="@+id/Menu_City"
         android:layout_width="216dp"
         android:layout_height="32dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="128dp"
         android:entries="@array/Menu_City"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.138"
@@ -35,19 +35,20 @@
         android:layout_width="212dp"
         android:layout_height="21dp"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
         android:text="Tipo de Equipamento"
         app:layout_constraintBottom_toTopOf="@+id/Tipo_Equipamento"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Menu_City"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Switch
         android:id="@+id/escolha_tomabamento_swicth"
         android:layout_width="305dp"
         android:layout_height="38dp"
-        android:text="Possui Tomabamento?"
+        android:text="Possui Tombamento?"
         android:checked="true"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,20 +58,20 @@
         app:layout_constraintVertical_bias="0.951" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/CampoTextTombo"
         android:layout_width="301dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="360dp"
+        android:layout_marginBottom="308dp"
         android:ems="10"
         android:hint="Tombamento/Patrimonio"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/CampoTextoNS"
         android:layout_width="301dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
@@ -80,10 +81,10 @@
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintTop_toBottomOf="@+id/CampoTextTombo"
+        app:layout_constraintVertical_bias="0.047" />
 
     <TextView
         android:id="@+id/textView3"
@@ -91,7 +92,7 @@
         android:layout_height="49dp"
         android:layout_marginBottom="16dp"
         android:text="Caso o Equipamento não possui Patrimonio, informa numero de Serie"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/CampoTextTombo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +114,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_MostraResultado"
         android:layout_width="113dp"
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
@@ -122,18 +123,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
+        app:layout_constraintTop_toBottomOf="@+id/CampoTextoNS"
         app:layout_constraintVertical_bias="0.109" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="112dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="12dp"
+        android:id="@+id/button_limpaResultado"
+        android:layout_width="113dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="80dp"
         android:text="Limpa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:layout_constraintVertical_bias="0.018" />
@@ -151,10 +153,13 @@
 
     <TextView
         android:id="@+id/mostra_resultado"
-        android:layout_width="168dp"
-        android:layout_height="44dp"
+        android:layout_width="210dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="44dp"
         android:text=""
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="668dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CampoTextoNS" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

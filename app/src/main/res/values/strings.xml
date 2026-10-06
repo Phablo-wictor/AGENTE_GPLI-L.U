@@ -14,7 +14,7 @@
     </string-array>
 
     <string-array name="Menu_TipoEquipamento">
-        <item>Notebook</item>
-        <item>Desktop</item>
+        <item>NO (Notebook)</item>
+        <item>DE (Desktop)</item>
     </string-array>
 </resources>
