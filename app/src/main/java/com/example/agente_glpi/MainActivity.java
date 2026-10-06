@@ -76,11 +76,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
                 if (isChecked) {
+
                     TextoTombo.setEnabled(true);
                     TextoNumeroSerie.setEnabled(false);
+                    TextoNumeroSerie.setText("");
+
                 } else {
+                    ;
                     TextoTombo.setEnabled(false);
                     TextoNumeroSerie.setEnabled(true);
+                    TextoTombo.setText("");
+
                 }
             }
         });
@@ -104,14 +110,21 @@ public class MainActivity extends AppCompatActivity {
 
                 textMostraResultado.setText(textFormatadoMenuCity + textFarmatadoEquipamento + TextoDigitadoTombo + TextoDigitadoNS);
 
-
             }
 
-
-
-
-
         });
+
+        //Configuração do butão de limpa o resultado
+
+        Button ButaoLimpaResultado = findViewById(R.id.button_limpaResultado);
+
+        ButaoLimpaResultado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textMostraResultado.setText("");
+            }
+        });
+
 
 
        }

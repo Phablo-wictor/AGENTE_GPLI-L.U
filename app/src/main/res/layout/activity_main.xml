@@ -59,32 +59,33 @@
 
     <EditText
         android:id="@+id/CampoTextTombo"
-        android:layout_width="301dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="308dp"
+        android:layout_width="264dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="304dp"
         android:ems="10"
         android:hint="Tombamento/Patrimonio"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/CampoTextoNS"
-        android:layout_width="301dp"
-        android:layout_height="45dp"
+        android:layout_width="267dp"
+        android:layout_height="43dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Numero de Serie"
         android:inputType="textMultiLine"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CampoTextTombo"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.048" />
 
     <TextView
         android:id="@+id/textView3"
@@ -157,6 +158,7 @@
         android:layout_height="54dp"
         android:layout_marginTop="44dp"
         android:text=""
+        android:textColor="#1BD3F1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.845"
         app:layout_constraintStart_toStartOf="parent"
