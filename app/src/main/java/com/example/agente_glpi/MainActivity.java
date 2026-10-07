@@ -7,9 +7,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.ComponentActivity;
 import androidx.activity.EdgeToEdge;
@@ -125,6 +127,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //Configuração da Inicialização da Camera
+
+        ImageButton butao_ler_codico = findViewById(R.id.imagem_butao_codico_barra);
+
+        butao_ler_codico.setOnClickListener(v -> {
+
+            CameraConfig.iniciarLeitura(MainActivity.this, new CameraConfig.ScanCallback() {
+                @Override
+                public void onSuccess(String codigoLido) {
+                    // Recebeu o resultado da câmera com sucesso
+                    TextoTombo.setText(codigoLido);
+                    TextoNumeroSerie.setText(codigoLido);
+                }
+                @Override
+                public void onCanceled() {
+                    Toast.makeText(MainActivity.this, "Leitura cancelada", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onError(Exception e) {
+                    Toast.makeText(MainActivity.this, "Erro: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        });
 
 
        }
