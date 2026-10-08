@@ -84,11 +84,9 @@ public class MainActivity extends AppCompatActivity {
                     TextoNumeroSerie.setText("");
 
                 } else {
-                    ;
                     TextoTombo.setEnabled(false);
                     TextoNumeroSerie.setEnabled(true);
                     TextoTombo.setText("");
-
                 }
             }
         });
@@ -111,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
                 String TextoDigitadoNS = TextoNumeroSerie.getText().toString().trim();
 
                 textMostraResultado.setText(textFormatadoMenuCity + textFarmatadoEquipamento + TextoDigitadoTombo + TextoDigitadoNS);
-
             }
 
         });
@@ -127,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         //Configuração da Inicialização da Camera
 
         ImageButton butao_ler_codico = findViewById(R.id.imagem_butao_codico_barra);
@@ -138,8 +134,11 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(String codigoLido) {
                     // Recebeu o resultado da câmera com sucesso
-                    TextoTombo.setText(codigoLido);
-                    TextoNumeroSerie.setText(codigoLido);
+                   if(TextoTombo.isEnabled()){
+                       TextoTombo.setText(codigoLido);
+                   }else{
+                       TextoNumeroSerie.setText(codigoLido);
+                   }
                 }
                 @Override
                 public void onCanceled() {
@@ -151,9 +150,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Erro: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-
         });
-
-///
        }
 }
