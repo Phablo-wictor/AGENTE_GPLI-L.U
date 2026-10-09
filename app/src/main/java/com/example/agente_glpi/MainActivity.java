@@ -121,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 textMostraResultado.setText("");
+                TextoTombo.setText("");
+                TextoNumeroSerie.setText("");
             }
         });
 
@@ -140,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
                        TextoNumeroSerie.setText(codigoLido);
                    }
                 }
+
                 @Override
                 public void onCanceled() {
                     Toast.makeText(MainActivity.this, "Leitura cancelada", Toast.LENGTH_SHORT).show();
