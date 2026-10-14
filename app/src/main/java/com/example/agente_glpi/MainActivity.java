@@ -36,6 +36,19 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        // Configuração dos Campos de escrita do Tombamento
+
+        EditText TextoTombo = findViewById(R.id.CampoTextTombo);
+
+        // Configuração do Campo de escrita do Numero de Serie
+
+        EditText TextoNumeroSerie = findViewById(R.id.CampoTextoNS);
+
+        //Configuração do Campo de Texto Resultado
+
+        TextView textMostraResultado = findViewById(R.id.mostra_resultado);
+
+        //Configura o swicth para ATIVA E DESATIVA O CAMPOS DE TOMBAMENTO DE PATRIMONIO
 
         //Adapter do Spinner Menu da cidade
         Spinner SpinnerMenuCity = findViewById(R.id.Menu_City);
@@ -57,20 +70,6 @@ public class MainActivity extends AppCompatActivity {
 
         SpinnerTipoEquipamento.setAdapter(adapterTipoEquipamento);
 
-
-        // Configuração dos Campos de escrita do Tombamento
-
-        EditText TextoTombo = findViewById(R.id.CampoTextTombo);
-
-        // Configuração do Campo de escrita do Numero de Serie
-
-        EditText TextoNumeroSerie = findViewById(R.id.CampoTextoNS);
-
-        //Configuração do Campo de Texto Resultado
-
-        TextView textMostraResultado = findViewById(R.id.mostra_resultado);
-
-        //Configura o swicth para ATIVA E DESATIVA O CAMPOS DE TOMBAMENTO DE PATRIMONIO
 
         Switch swich_escolha_tomb = findViewById(R.id.escolha_tomabamento_swicth);
 

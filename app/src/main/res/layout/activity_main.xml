@@ -118,27 +118,27 @@
 
     <Button
         android:id="@+id/button_MostraResultado"
-        android:layout_width="113dp"
-        android:layout_height="50dp"
+        android:layout_width="114dp"
+        android:layout_height="51dp"
         android:layout_marginTop="28dp"
         android:text="Mostra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CampoTextoNS"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button_limpaResultado"
-        android:layout_width="113dp"
-        android:layout_height="50dp"
+        android:layout_width="114dp"
+        android:layout_height="44dp"
         android:layout_marginTop="28dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="104dp"
         android:text="Limpa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:layout_constraintVertical_bias="0.018" />
@@ -157,13 +157,13 @@
     <TextView
         android:id="@+id/mostra_resultado"
         android:layout_width="210dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="44dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="28dp"
         android:text=""
         android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintHorizontal_bias="0.825"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CampoTextoNS" />
 
@@ -180,6 +180,19 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.887"
         app:srcCompat="@drawable/codicobarrasazul" />
+
+    <ImageButton
+        android:id="@+id/butao_envia_planilha"
+        android:layout_width="202dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="80dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/enviar_planilha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mostra_resultado"
+        app:srcCompat="@drawable/enviar_planilha" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
