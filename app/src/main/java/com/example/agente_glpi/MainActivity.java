@@ -22,7 +22,22 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.lang.reflect.Array;
 
+import kotlin.contracts.Returns;
+
 public class MainActivity extends AppCompatActivity {
+
+    //Variavel de texto final devera está no Comerço do Escopo
+
+    String opcaoEscolidaMenuCity;
+
+    String opcaoEsclidaEquiapmento;
+
+    String TextoDigitadoTombo;
+
+    String TextoDigitadoNS;
+
+    String TextMostraResultadoFinal;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,26 +52,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //Adapter do Spinner Menu da cidade
-        Spinner SpinnerMenuCity = findViewById(R.id.Menu_City);
 
-        ArrayAdapter<CharSequence> adapterMenuCity = ArrayAdapter.createFromResource(this, R.array.Menu_City, android.R.layout.simple_spinner_item);
+        // Configuração da imagem texto
 
-        adapterMenuCity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        SpinnerMenuCity.setAdapter(adapterMenuCity);
-
-
-        //adpater do Spinner Menu tipo de Equipamento
-
-        Spinner SpinnerTipoEquipamento = findViewById(R.id.Tipo_Equipamento);
-
-        ArrayAdapter<CharSequence> adapterTipoEquipamento = ArrayAdapter.createFromResource(this, R.array.Menu_TipoEquipamento, android.R.layout.simple_spinner_dropdown_item);
-
-        adapterTipoEquipamento.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        SpinnerTipoEquipamento.setAdapter(adapterTipoEquipamento);
-
+        ImageButton butao_enviar_planilha = findViewById(R.id.butao_envia_planilha);
 
         // Configuração dos Campos de escrita do Tombamento
 
@@ -70,8 +69,30 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textMostraResultado = findViewById(R.id.mostra_resultado);
 
-        //Configura o swicth para ATIVA E DESATIVA O CAMPOS DE TOMBAMENTO DE PATRIMONIO
 
+
+        //Adapter do Spinner Menu da cidade
+        Spinner SpinnerMenuCity = findViewById(R.id.Menu_City);
+
+        ArrayAdapter<CharSequence> adapterMenuCity = ArrayAdapter.createFromResource(this, R.array.Menu_City, android.R.layout.simple_spinner_item);
+
+        adapterMenuCity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        SpinnerMenuCity.setAdapter(adapterMenuCity);
+
+
+
+        //adpater do Spinner Menu tipo de Equipamento
+
+        Spinner SpinnerTipoEquipamento = findViewById(R.id.Tipo_Equipamento);
+
+        ArrayAdapter<CharSequence> adapterTipoEquipamento = ArrayAdapter.createFromResource(this, R.array.Menu_TipoEquipamento, android.R.layout.simple_spinner_dropdown_item);
+
+        adapterTipoEquipamento.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        SpinnerTipoEquipamento.setAdapter(adapterTipoEquipamento);
+
+        //Configura o swicth para ATIVA E DESATIVA O CAMPOS DE TOMBAMENTO DE PATRIMONIO
         Switch swich_escolha_tomb = findViewById(R.id.escolha_tomabamento_swicth);
 
         swich_escolha_tomb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -91,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         // Configuração do butão de Mostra Resultado
         Button ButaoResultado = findViewById(R.id.button_MostraResultado);
 
@@ -98,17 +120,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String opcaoEscolidaMenuCity = SpinnerMenuCity.getSelectedItem().toString();
+                opcaoEscolidaMenuCity = SpinnerMenuCity.getSelectedItem().toString();
                 String textFormatadoMenuCity = opcaoEscolidaMenuCity.substring(0,2);
 
-                String opcaoEsclidaEquiapmento = SpinnerTipoEquipamento.getSelectedItem().toString();
+                opcaoEsclidaEquiapmento = SpinnerTipoEquipamento.getSelectedItem().toString();
                 String textFarmatadoEquipamento = opcaoEsclidaEquiapmento.substring(0,2);
 
-                String TextoDigitadoTombo = TextoTombo.getText().toString().trim();
+                TextoDigitadoTombo = TextoTombo.getText().toString().trim();
 
-                String TextoDigitadoNS = TextoNumeroSerie.getText().toString().trim();
+                TextoDigitadoNS = TextoNumeroSerie.getText().toString().trim();
 
                 textMostraResultado.setText(textFormatadoMenuCity + textFarmatadoEquipamento + TextoDigitadoTombo + TextoDigitadoNS);
+
+                TextMostraResultadoFinal = textFormatadoMenuCity + textFarmatadoEquipamento + TextoDigitadoTombo + TextoDigitadoNS;
+
             }
 
         });
@@ -154,5 +179,23 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         });
+
+
+        //Configuração do butão de enviar os dados de planilha
+
+        butao_enviar_planilha.setOnClickListener(v -> {
+
+                PlalinhaConfigGPLI.enviarDados(
+                        MainActivity.this,
+                        opcaoEscolidaMenuCity,
+                        opcaoEsclidaEquiapmento,
+                        TextoDigitadoTombo,
+                        TextoDigitadoNS,
+                        TextMostraResultadoFinal);
+
+                Toast.makeText(this, "Enviando dados...", Toast.LENGTH_SHORT).show();
+
+        });
+
        }
 }
